@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Finnish 🇫🇮 — A1 to B2</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>Learn Finnish 🇫🇮 — Free Course A1→B2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -15,177 +16,396 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #f5f7fa;
-            color: #1a1a2e;
-            line-height: 1.7
+            background: #0a0f1a;
+            color: #fff;
+            min-height: 100vh
+        }
+
+        /* Animated background */
+        .bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden
+        }
+
+        .bg::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 53, 128, .3), transparent 70%);
+            top: -100px;
+            right: -100px;
+            animation: float 8s ease-in-out infinite
+        }
+
+        .bg::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 100, 200, .15), transparent 70%);
+            bottom: -50px;
+            left: -50px;
+            animation: float 10s ease-in-out infinite reverse
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0)
+            }
+
+            50% {
+                transform: translate(30px, -30px)
+            }
         }
 
         .wrap {
-            max-width: 780px;
+            max-width: 820px;
             margin: 0 auto;
-            padding: 16px
+            padding: 20px;
+            position: relative;
+            z-index: 1
         }
 
-        header {
-            background: #003580;
-            color: #fff;
-            padding: 50px 24px;
+        /* Hero header */
+        .hero {
             text-align: center;
-            margin-bottom: 32px;
-            border-radius: 0 0 20px 20px
+            padding: 60px 20px 50px
         }
 
-        header h1 {
-            font-size: 2.6rem;
-            font-weight: 800;
-            margin-bottom: 8px
+        .hero-flag {
+            font-size: 4rem;
+            margin-bottom: 16px;
+            animation: bounce 2s ease-in-out infinite
         }
 
-        header p {
-            opacity: .85;
-            font-size: 1.1rem;
-            max-width: 500px;
-            margin: 0 auto
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-8px)
+            }
         }
 
-        .flag {
+        .hero h1 {
             font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #fff 0%, #a8c8ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 12px
         }
 
-        .card {
-            background: #fff;
-            border-radius: 14px;
-            padding: 28px;
-            margin-bottom: 22px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, .05)
+        .hero p {
+            color: rgba(255, 255, 255, .6);
+            font-size: 1.1rem;
+            max-width: 420px;
+            margin: 0 auto
         }
 
-        .card h2 {
-            font-size: 1.3rem;
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0, 53, 128, .4);
+            border: 1px solid rgba(255, 255, 255, .1);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: .8rem;
+            font-weight: 600;
+            color: #a8c8ff;
+            margin-top: 16px;
+            backdrop-filter: blur(10px)
+        }
+
+        /* Stats row */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 10px 0 40px;
+            flex-wrap: wrap
+        }
+
+        .stat {
+            text-align: center
+        }
+
+        .stat-num {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff
+        }
+
+        .stat-label {
+            font-size: .75rem;
+            color: rgba(255, 255, 255, .4);
+            text-transform: uppercase;
+            letter-spacing: 1px
+        }
+
+        /* Section title */
+        .section-title {
+            font-size: 1.1rem;
             font-weight: 700;
-            color: #003580;
-            margin-bottom: 16px
+            color: rgba(255, 255, 255, .4);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+            padding-left: 4px
         }
 
-        .lesson-list {
-            list-style: none
+        /* Lesson cards */
+        .lessons {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 40px
         }
 
-        .lesson-list li {
-            margin-bottom: 10px
-        }
-
-        .lesson-list a {
+        .lesson {
             display: flex;
             align-items: center;
-            gap: 14px;
-            padding: 16px 20px;
-            background: #f8f9ff;
-            border-radius: 10px;
+            gap: 18px;
+            padding: 22px 24px;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .06);
+            border-radius: 16px;
+            cursor: pointer;
             text-decoration: none;
-            color: #1a1a2e;
-            border: 1px solid #e8e8e8;
-            transition: all .2s;
-        }
-
-        .lesson-list a:hover {
-            border-color: #003580;
-            background: #eef3ff;
-            transform: translateX(4px)
-        }
-
-        .lesson-num {
-            background: #003580;
             color: #fff;
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+            transition: all .3s cubic-bezier(.4, 0, .2, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        .lesson:hover {
+            background: rgba(0, 53, 128, .25);
+            border-color: rgba(0, 100, 200, .3);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 53, 128, .25);
+        }
+
+        /* Lesson icon */
+        .lesson-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 800;
-            font-size: .9rem;
+            font-size: 1.5rem;
             flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lesson-icon::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 14px;
+            opacity: .15
+        }
+
+        .icon-blue {
+            background: linear-gradient(135deg, #1a5baa, #003580)
+        }
+
+        .icon-purple {
+            background: linear-gradient(135deg, #6a3fb5, #4a148c)
+        }
+
+        .icon-green {
+            background: linear-gradient(135deg, #2e7d32, #1b5e20)
+        }
+
+        .icon-orange {
+            background: linear-gradient(135deg, #e65100, #bf360c)
+        }
+
+        .icon-teal {
+            background: linear-gradient(135deg, #00897b, #004d40)
+        }
+
+        .icon-pink {
+            background: linear-gradient(135deg, #c2185b, #880e4f)
         }
 
         .lesson-info {
-            flex: 1
+            flex: 1;
+            min-width: 0
         }
 
         .lesson-title {
             font-weight: 700;
-            font-size: 1rem
+            font-size: 1.05rem;
+            margin-bottom: 3px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap
         }
 
         .lesson-desc {
             font-size: .85rem;
-            color: #666;
-            margin-top: 2px
+            color: rgba(255, 255, 255, .45)
         }
 
-        .arrow {
-            color: #003580;
-            font-size: 1.2rem;
-            opacity: .4
-        }
-
-        .lesson-list a:hover .arrow {
-            opacity: 1
-        }
-
-        .level-tag {
-            display: inline-block;
-            background: #e6f0ff;
-            color: #003580;
+        .tag {
+            font-size: .65rem;
             font-weight: 700;
-            font-size: .75rem;
-            padding: 3px 10px;
-            border-radius: 12px;
-            margin-left: 8px
+            padding: 3px 8px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: .5px
         }
 
-        .progress {
+        .tag-a1 {
+            background: rgba(0, 53, 128, .3);
+            color: #6db3f2
+        }
+
+        .tag-new {
+            background: rgba(46, 125, 50, .3);
+            color: #81c784
+        }
+
+        .lesson-arrow {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, .05);
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-top: 12px
+            justify-content: center;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, .3);
+            transition: all .3s;
+            flex-shrink: 0;
         }
 
-        .bar {
+        .lesson:hover .lesson-arrow {
+            background: rgba(0, 53, 128, .4);
+            color: #fff;
+            transform: translateX(3px)
+        }
+
+        /* Progress section */
+        .progress-card {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .06);
+            border-radius: 16px;
+            padding: 28px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+
+        .progress-title {
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: rgba(255, 255, 255, .7)
+        }
+
+        .progress-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .progress-label {
+            font-size: .75rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .4)
+        }
+
+        .progress-track {
             flex: 1;
-            height: 6px;
-            background: #e0e0e0;
-            border-radius: 3px;
+            height: 8px;
+            background: rgba(255, 255, 255, .08);
+            border-radius: 4px;
             overflow: hidden
         }
 
-        .bar-fill {
+        .progress-fill {
             height: 100%;
             width: 0.66%;
-            background: #003580;
-            border-radius: 3px
+            background: linear-gradient(90deg, #003580, #4da6ff);
+            border-radius: 4px;
+            transition: width 1s ease
         }
 
-        .progress span {
-            font-size: .8rem;
-            color: #888
+        .progress-pct {
+            font-size: .85rem;
+            color: rgba(255, 255, 255, .5);
+            margin-top: 10px
+        }
+
+        /* Coming soon */
+        .coming-soon {
+            text-align: center;
+            padding: 24px;
+            border: 1px dashed rgba(255, 255, 255, .1);
+            border-radius: 16px;
+            color: rgba(255, 255, 255, .25);
+            font-size: .9rem;
+            margin-bottom: 30px;
+        }
+
+        .coming-soon span {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 8px
         }
 
         footer {
             text-align: center;
-            padding: 30px 0;
-            color: #aaa;
+            padding: 20px 0 40px;
+            color: rgba(255, 255, 255, .2);
             font-size: .8rem
         }
 
+        footer a {
+            color: rgba(255, 255, 255, .3);
+            text-decoration: none
+        }
+
+        footer a:hover {
+            color: #fff
+        }
+
         @media(max-width:600px) {
-            header h1 {
-                font-size: 1.8rem
+            .hero h1 {
+                font-size: 2rem
             }
 
-            header {
-                padding: 30px 16px
+            .hero {
+                padding: 40px 16px 30px
+            }
+
+            .lesson {
+                padding: 16px
+            }
+
+            .lesson-icon {
+                width: 46px;
+                height: 46px;
+                font-size: 1.2rem
+            }
+
+            .stats {
+                gap: 20px
             }
         }
     </style>
@@ -193,58 +413,78 @@
 
 <body>
 
-    <header>
-        <div class="flag">🇫🇮</div>
-        <h1>Learn Finnish</h1>
-        <p>Free course from A1 to B2 — one lesson every day</p>
-    </header>
+    <div class="bg"></div>
 
     <div class="wrap">
 
-        <div class="card">
-            <h2>📚 Lessons</h2>
-            <ul class="lesson-list">
-                <li>
-                    <a href="lesson_01.html">
-                        <div class="lesson-num">1</div>
-                        <div class="lesson-info">
-                            <div class="lesson-title">Alphabet, Pronunciation & First Words <span
-                                    class="level-tag">A1</span></div>
-                            <div class="lesson-desc">Finnish sounds (Ä, Ö, Y), stress rules, 12 survival words</div>
-                        </div>
-                        <div class="arrow">→</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="lesson_02.html">
-                        <div class="lesson-num">2</div>
-                        <div class="lesson-info">
-                            <div class="lesson-title">Verb "Olla" (To Be) & Where Are You From? <span
-                                    class="level-tag">A1</span></div>
-                            <div class="lesson-desc">Minä olen, sinä olet… + country names with -sta</div>
-                        </div>
-                        <div class="arrow">→</div>
-                    </a>
-                </li>
-            </ul>
+        <div class="hero">
+            <div class="hero-flag">🇫🇮</div>
+            <h1>Learn Finnish</h1>
+            <p>Free interactive course — one new lesson every day, from zero to fluent</p>
+            <div class="hero-badge">🎯 Preparing for YKI test · A1 → B2</div>
         </div>
 
-        <div class="card" style="text-align:center;">
-            <h2 style="display:block;text-align:center;">📊 Progress</h2>
-            <div class="progress">
-                <span>A1</span>
-                <div class="bar">
-                    <div class="bar-fill"></div>
-                </div>
-                <span>B2</span>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-num">2</div>
+                <div class="stat-label">Lessons</div>
             </div>
-            <p style="color:#888;font-size:.85rem;margin-top:10px;">2 / 300 lessons</p>
+            <div class="stat">
+                <div class="stat-num">22</div>
+                <div class="stat-label">Words learned</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">300</div>
+                <div class="stat-label">Total planned</div>
+            </div>
+        </div>
+
+        <div class="section-title">📚 Available Lessons</div>
+
+        <div class="lessons">
+            <a href="lesson_01.html" class="lesson">
+                <div class="lesson-icon icon-blue">🔤</div>
+                <div class="lesson-info">
+                    <div class="lesson-title">Alphabet & First Words <span class="tag tag-a1">A1</span></div>
+                    <div class="lesson-desc">Finnish sounds (Ä, Ö, Y) · stress rules · 12 survival words · dialogue
+                    </div>
+                </div>
+                <div class="lesson-arrow">→</div>
+            </a>
+
+            <a href="lesson_02.html" class="lesson">
+                <div class="lesson-icon icon-purple">🗣️</div>
+                <div class="lesson-info">
+                    <div class="lesson-title">Verb "Olla" & Introductions <span class="tag tag-a1">A1</span> <span
+                            class="tag tag-new">New</span></div>
+                    <div class="lesson-desc">I am, you are, he/she is · country names · "where are you from?"</div>
+                </div>
+                <div class="lesson-arrow">→</div>
+            </a>
+        </div>
+
+        <div class="coming-soon">
+            <span>⏳</span>
+            Lesson 3 coming tomorrow at 20:00<br>
+            <small>Numbers, age & counting in Finnish</small>
+        </div>
+
+        <div class="progress-card">
+            <div class="progress-title">📊 Your Journey</div>
+            <div class="progress-bar">
+                <span class="progress-label">A1</span>
+                <div class="progress-track">
+                    <div class="progress-fill"></div>
+                </div>
+                <span class="progress-label">B2</span>
+            </div>
+            <div class="progress-pct">2 of 300 lessons completed</div>
         </div>
 
     </div>
 
     <footer>
-        <p>Opettaja Bot — New lesson every day at 20:00</p>
+        <p>Opettaja Bot · <a href="https://github.com/ebayismail20-create/opettaja-sonnet-finnish">GitHub</a></p>
     </footer>
 
 </body>
