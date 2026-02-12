@@ -4,162 +4,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opettaja Sonnet — Learn Finnish from Zero to B2</title>
-    <meta name="description"
-        content="Free interactive Finnish language course. Learn Finnish from absolute zero to upper-intermediate (B2) level with daily lessons, exercises, and YKI test preparation.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Learn Finnish 🇫🇮 — A1 to B2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f7fa;
+            color: #1a1a2e;
+            line-height: 1.7
+        }
+
+        .wrap {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 16px
+        }
+
+        header {
+            background: #003580;
+            color: #fff;
+            padding: 50px 24px;
+            text-align: center;
+            margin-bottom: 32px;
+            border-radius: 0 0 20px 20px
+        }
+
+        header h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 8px
+        }
+
+        header p {
+            opacity: .85;
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto
+        }
+
+        .flag {
+            font-size: 3rem;
+            margin-bottom: 12px
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 28px;
+            margin-bottom: 22px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .05)
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #003580;
+            margin-bottom: 16px
+        }
+
+        .lesson-list {
+            list-style: none
+        }
+
+        .lesson-list li {
+            margin-bottom: 10px
+        }
+
+        .lesson-list a {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 20px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #1a1a2e;
+            border: 1px solid #e8e8e8;
+            transition: all .2s;
+        }
+
+        .lesson-list a:hover {
+            border-color: #003580;
+            background: #eef3ff;
+            transform: translateX(4px)
+        }
+
+        .lesson-num {
+            background: #003580;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: .9rem;
+            flex-shrink: 0;
+        }
+
+        .lesson-info {
+            flex: 1
+        }
+
+        .lesson-title {
+            font-weight: 700;
+            font-size: 1rem
+        }
+
+        .lesson-desc {
+            font-size: .85rem;
+            color: #666;
+            margin-top: 2px
+        }
+
+        .arrow {
+            color: #003580;
+            font-size: 1.2rem;
+            opacity: .4
+        }
+
+        .lesson-list a:hover .arrow {
+            opacity: 1
+        }
+
+        .level-tag {
+            display: inline-block;
+            background: #e6f0ff;
+            color: #003580;
+            font-weight: 700;
+            font-size: .75rem;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin-left: 8px
+        }
+
+        .progress {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 12px
+        }
+
+        .bar {
+            flex: 1;
+            height: 6px;
+            background: #e0e0e0;
+            border-radius: 3px;
+            overflow: hidden
+        }
+
+        .bar-fill {
+            height: 100%;
+            width: 0.66%;
+            background: #003580;
+            border-radius: 3px
+        }
+
+        .progress span {
+            font-size: .8rem;
+            color: #888
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #aaa;
+            font-size: .8rem
+        }
+
+        @media(max-width:600px) {
+            header h1 {
+                font-size: 1.8rem
+            }
+
+            header {
+                padding: 30px 16px
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- ============ LANDING PAGE ============ -->
-    <div id="landing-page">
-        <div class="hero">
-            <div class="hero-bg-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-            </div>
-            <nav class="nav">
-                <div class="logo">🇫🇮 <span>Opettaja Sonnet</span></div>
-                <div class="nav-links">
-                    <a href="#curriculum">Curriculum</a>
-                    <a href="#features">Features</a>
-                    <button class="btn btn-sm" onclick="showLessonPage()">Start Learning</button>
-                </div>
-            </nav>
-            <div class="hero-content">
-                <div class="hero-badge">100% Free · No Sign Up · Start Now</div>
-                <h1>Learn <span class="gradient-text">Finnish</span> from<br>Absolute Zero</h1>
-                <p class="hero-subtitle">300 interactive daily lessons taking you from A0 to B2,<br>with YKI test
-                    preparation built in.</p>
-                <div class="hero-cta">
-                    <button class="btn btn-lg btn-glow" onclick="showLessonPage()">
-                        🚀 Begin Lesson 1 — Free
-                    </button>
-                    <p class="hero-cta-sub">No account needed. Just start learning.</p>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat"><span class="stat-num">300</span><span class="stat-label">Lessons</span></div>
-                    <div class="stat"><span class="stat-num">4</span><span class="stat-label">CEFR Levels</span></div>
-                    <div class="stat"><span class="stat-num">3000+</span><span class="stat-label">Words</span></div>
-                    <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Practice</span></div>
-                </div>
-            </div>
+
+    <header>
+        <div class="flag">🇫🇮</div>
+        <h1>Learn Finnish</h1>
+        <p>Free course from A1 to B2 — one lesson every day</p>
+    </header>
+
+    <div class="wrap">
+
+        <div class="card">
+            <h2>📚 Lessons</h2>
+            <ul class="lesson-list">
+                <li>
+                    <a href="lesson_01.html">
+                        <div class="lesson-num">1</div>
+                        <div class="lesson-info">
+                            <div class="lesson-title">Alphabet, Pronunciation & First Words <span
+                                    class="level-tag">A1</span></div>
+                            <div class="lesson-desc">Finnish sounds (Ä, Ö, Y), stress rules, 12 survival words</div>
+                        </div>
+                        <div class="arrow">→</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="lesson_02.html">
+                        <div class="lesson-num">2</div>
+                        <div class="lesson-info">
+                            <div class="lesson-title">Verb "Olla" (To Be) & Where Are You From? <span
+                                    class="level-tag">A1</span></div>
+                            <div class="lesson-desc">Minä olen, sinä olet… + country names with -sta</div>
+                        </div>
+                        <div class="arrow">→</div>
+                    </a>
+                </li>
+            </ul>
         </div>
 
-        <!-- Curriculum Section -->
-        <section class="section-dark" id="curriculum">
-            <h2 class="section-title">📋 Your Learning Journey</h2>
-            <div class="timeline">
-                <div class="timeline-item active">
-                    <div class="timeline-badge">A1</div>
-                    <div class="timeline-card">
-                        <h3>Survival Finnish</h3>
-                        <p>Months 1-2 · Lessons 1-60</p>
-                        <ul>
-                            <li>Pronunciation & Alphabet</li>
-                            <li>Basic Cases (Nominative, Genitive, Partitive)</li>
-                            <li>Present Tense Verbs</li>
-                            <li>Numbers, Colors, Common Phrases</li>
-                        </ul>
-                    </div>
+        <div class="card" style="text-align:center;">
+            <h2 style="display:block;text-align:center;">📊 Progress</h2>
+            <div class="progress">
+                <span>A1</span>
+                <div class="bar">
+                    <div class="bar-fill"></div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-badge">A2</div>
-                    <div class="timeline-card">
-                        <h3>Elementary Finnish</h3>
-                        <p>Months 3-4 · Lessons 61-120</p>
-                        <ul>
-                            <li>Past Tenses</li>
-                            <li>More Cases (Inessive, Adessive…)</li>
-                            <li>Simple Conversations</li>
-                            <li>Everyday Situations</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-badge">B1</div>
-                    <div class="timeline-card">
-                        <h3>Intermediate Finnish</h3>
-                        <p>Months 5-7 · Lessons 121-200</p>
-                        <ul>
-                            <li>Complex Grammar & All Cases</li>
-                            <li>Conditional & Imperative Moods</li>
-                            <li>Participle Forms</li>
-                            <li>Reading Comprehension</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-badge">B2</div>
-                    <div class="timeline-card">
-                        <h3>Upper-Intermediate</h3>
-                        <p>Months 8-10 · Lessons 201-300</p>
-                        <ul>
-                            <li>Advanced Structures</li>
-                            <li>Formal vs. Informal Register</li>
-                            <li>Full YKI Simulations</li>
-                            <li>Fluent Conversation</li>
-                        </ul>
-                    </div>
-                </div>
+                <span>B2</span>
             </div>
-        </section>
+            <p style="color:#888;font-size:.85rem;margin-top:10px;">2 / 300 lessons</p>
+        </div>
 
-        <!-- Features Section -->
-        <section class="section-light" id="features">
-            <h2 class="section-title">✨ What Makes This Different</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🧱</div>
-                    <h3>Lego Block Method</h3>
-                    <p>Finnish words build like Lego blocks. We show you visually how endings snap onto stems.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✍️</div>
-                    <h3>Interactive Exercises</h3>
-                    <p>Fill-in-the-blanks, translations, and writing assignments — all with instant feedback.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎓</div>
-                    <h3>YKI Test Ready</h3>
-                    <p>Every 10th lesson is a YKI simulation. Be ready for the real exam from day one.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🗣️</div>
-                    <h3>Spoken vs. Written</h3>
-                    <p>We always show you both spoken ("puhekieli") and written ("kirjakieli") Finnish.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
-                    <h3>Memory Tricks</h3>
-                    <p>Visual images, English associations, and physical gestures for every hard concept.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Progress Tracking</h3>
-                    <p>Your scores and writing saved locally. Pick up right where you left off.</p>
-                </div>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <p>Made with ❤️ for Finnish learners everywhere</p>
-            <p>Opettaja Sonnet — From Zero to YKI</p>
-        </footer>
     </div>
 
-    <!-- ============ LESSON PAGE ============ -->
-    <div id="lesson-page" style="display:none;">
-        <!-- populated by JS -->
-    </div>
+    <footer>
+        <p>Opettaja Bot — New lesson every day at 20:00</p>
+    </footer>
 
-    <script src="lessons.js"></script>
-    <script src="app.js"></script>
 </body>
 
 </html>
