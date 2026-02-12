@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Finnish — Lesson 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Inter',sans-serif;background:#f5f7fa;color:#1a1a2e;line-height:1.7}
+        .wrap{max-width:780px;margin:0 auto;padding:16px}
+        header{background:#003580;color:#fff;padding:36px 24px;border-radius:0 0 20px 20px;text-align:center;margin-bottom:32px}
+        header h1{font-size:2.2rem;font-weight:800;margin-bottom:4px}
+        header p{opacity:.8;font-size:1rem}
+        .badge{display:inline-block;background:#fff;color:#003580;font-weight:800;font-size:.8rem;padding:4px 14px;border-radius:20px;margin-bottom:12px}
+        .card{background:#fff;border-radius:14px;padding:28px;margin-bottom:22px;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+        .card h2{font-size:1.3rem;font-weight:700;color:#003580;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+        table{width:100%;border-collapse:collapse}
+        th{text-align:left;font-size:.75rem;text-transform:uppercase;letter-spacing:1px;color:#888;padding:8px 12px;border-bottom:2px solid #eee}
+        td{padding:12px;border-bottom:1px solid #f0f0f0;font-size:.95rem}
+        tr:hover{background:#f8f9ff}
+        .fi{font-weight:700;color:#003580;font-size:1.05rem}
+        .pron{font-family:monospace;color:#666;font-size:.85rem}
+        .dialogue{background:#f0f7ff;border-radius:10px;padding:20px;margin-top:8px}
+        .dialogue .line{margin-bottom:8px}
+        .dialogue .speaker{font-weight:700;color:#003580}
+        .ex{margin-bottom:16px}
+        .ex label{display:block;font-weight:600;margin-bottom:6px}
+        .ex input[type="text"]{width:100%;padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:1rem;font-family:inherit;transition:border .2s}
+        .ex input:focus{outline:none;border-color:#003580}
+        .ex-row{display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap}
+        .ex-row input{flex:1;min-width:200px}
+        .btn{background:#003580;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.9rem}
+        .btn:hover{background:#002560}
+        .btn-sm{padding:8px 16px;font-size:.85rem}
+        .feedback{margin-top:6px;padding:8px 12px;border-radius:6px;font-size:.9rem;display:none}
+        .feedback.correct{display:block;background:#e8f5e9;color:#2e7d32}
+        .feedback.wrong{display:block;background:#ffebee;color:#c62828}
+        textarea{width:100%;min-height:120px;padding:14px;border:2px solid #e0e0e0;border-radius:8px;font-family:inherit;font-size:1rem;resize:vertical;transition:border .2s}
+        textarea:focus{outline:none;border-color:#003580}
+        .quiz-q{margin-bottom:14px;padding:14px;background:#f8f9ff;border-radius:8px;cursor:pointer;border:1px solid #e8e8e8;transition:all .2s}
+        .quiz-q:hover{border-color:#003580}
+        .quiz-q .q{font-weight:600}
+        .quiz-q .a{display:none;margin-top:8px;padding-top:8px;border-top:1px solid #e0e0e0;color:#003580;font-weight:600}
+        .progress{display:flex;align-items:center;gap:12px;margin-top:6px}
+        .bar{flex:1;height:6px;background:#e0e0e0;border-radius:3px;overflow:hidden}
+        .bar-fill{height:100%;width:1.0%;background:#003580;border-radius:3px}
+        .progress span{font-size:.8rem;color:#888}
+        .tip{background:#fffde7;border-left:4px solid #ffd600;padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:16px;font-size:.95rem}
+        .nav-links{display:flex;justify-content:space-between;margin-top:20px}
+        .nav-links a{color:#003580;text-decoration:none;font-weight:600;font-size:.9rem}
+        .nav-links a:hover{text-decoration:underline}
+        footer{text-align:center;padding:30px 0;color:#aaa;font-size:.8rem}
+        @media(max-width:600px){header h1{font-size:1.6rem}.wrap{padding:10px}.card{padding:20px}}
+    </style>
+</head>
+<body>
+
+    <div style="max-width:780px;margin:0 auto;padding:12px 16px 0;">
+        <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:#003580;text-decoration:none;font-weight:600;font-size:.9rem;padding:8px 14px;background:#e6f0ff;border-radius:8px;transition:all .2s;" onmouseover="this.style.background='#d0e3ff'" onmouseout="this.style.background='#e6f0ff'">← All Lessons</a>
+    </div>
+
+<header>
+    <div class="badge">Level A1 · Lesson 3 of 300</div>
+    <h1>🇫🇮 Learn Finnish</h1>
+    <p>Numbers (0-20) & Asking "How Old Are You?"</p>
+</header>
+
+<div class="wrap">
+
+    <!-- ===== NUMBERS 0-10 ===== -->
+    <div class="card">
+        <h2>🔢 Numbers 0-10</h2>
+        <table>
+            <tr><th>Number</th><th>Finnish</th><th>Say it</th></tr>
+            <tr><td>0</td><td class="fi">nolla</td><td class="pron">nol-la</td></tr>
+            <tr><td>1</td><td class="fi">yksi</td><td class="pron">ÜK-si</td></tr>
+            <tr><td>2</td><td class="fi">kaksi</td><td class="pron">KAK-si</td></tr>
+            <tr><td>3</td><td class="fi">kolme</td><td class="pron">KOL-me</td></tr>
+            <tr><td>4</td><td class="fi">neljä</td><td class="pron">NEL-jä</td></tr>
+            <tr><td>5</td><td class="fi">viisi</td><td class="pron">VII-si</td></tr>
+            <tr><td>6</td><td class="fi">kuusi</td><td class="pron">KUU-si</td></tr>
+            <tr><td>7</td><td class="fi">seitsemän</td><td class="pron">SEIT-se-män</td></tr>
+            <tr><td>8</td><td class="fi">kahdeksan</td><td class="pron">KAH-dek-san</td></tr>
+            <tr><td>9</td><td class="fi">yhdeksän</td><td class="pron">ÜH-dek-sän</td></tr>
+            <tr><td>10</td><td class="fi">kymmenen</td><td class="pron">KÜM-me-nen</td></tr>
+        </table>
+         <div class="tip" style="margin-top:16px;">
+            ⚠️ <strong>Trick for 8 & 9:</strong><br>
+            • 2 = kaksi → 8 = kahdeksan (literally "two-from-ten" in old Finnish!)<br>
+            • 1 = yksi → 9 = yhdeksän ("one-from-ten")
+        </div>
+    </div>
+
+    <!-- ===== NUMBERS 11-20 ===== -->
+    <div class="card">
+        <h2>🔢 Numbers 11-20</h2>
+         <div class="tip">
+            ☝️ Just add <strong>-toista</strong> (meaning "of the second ten").<br>
+            yksi (1) + toista = yksitoista (11)
+        </div>
+        <table>
+            <tr><th>Number</th><th>Finnish</th><th>Say it</th></tr>
+            <tr><td>11</td><td class="fi">yksitoista</td><td class="pron">ÜK-si-tois-ta</td></tr>
+            <tr><td>12</td><td class="fi">kaksitoista</td><td class="pron">KAK-si-tois-ta</td></tr>
+            <tr><td>13</td><td class="fi">kolmetoista</td><td class="pron">KOL-me-tois-ta</td></tr>
+            <tr><td>...</td><td class="fi">...toista</td><td class="pron">...</td></tr>
+            <tr><td>20</td><td class="fi">kaksikymmentä</td><td class="pron">KAK-si-küm-men-tä</td></tr>
+        </table>
+        <div class="tip" style="margin-top:10px;">
+            For 20, 30, 40... say the number + <strong>-kymmentä</strong>.<br>
+            20 = kaksi + kymmentä (two tens).
+        </div>
+    </div>
+
+    <!-- ===== DIALOGUE: AGE ===== -->
+    <div class="card">
+        <h2>🎂 Asking "How Old Are You?"</h2>
+        <div class="dialogue">
+            <div class="line"><span class="speaker">A:</span> Kuinka vanha sinä olet? (How old are you?)</div>
+            <div class="line"><span class="speaker">B:</span> Minä olen 25 vuotta vanha. Entä sinä?</div>
+            <div class="line"><span class="speaker">A:</span> Minä olen 30.</div>
+        </div>
+        <div class="tip" style="margin-top:16px;">
+            <strong>Formula:</strong> Olen + [number] + vuotta vanha.<br>
+            (I am + X + years old).<br>
+            <em>"Vuotta vanha" is optional! You can just say "Olen 25."</em>
+        </div>
+    </div>
+
+    <!-- ===== EXERCISES ===== -->
+    <div class="card">
+        <h2>💪 Practice</h2>
+
+        <div class="ex">
+            <label>1. Write the number 3 in Finnish:</label>
+            <div class="ex-row">
+                <input type="text" id="e1" placeholder="Type here…">
+                <button class="btn btn-sm" onclick="check('e1','kolme')">Check</button>
+            </div>
+            <div class="feedback" id="f1"></div>
+        </div>
+
+        <div class="ex">
+            <label>2. Write the number 8 in Finnish:</label>
+            <div class="ex-row">
+                <input type="text" id="e2" placeholder="Type here…">
+                <button class="btn btn-sm" onclick="check('e2','kahdeksan')">Check</button>
+            </div>
+            <div class="feedback" id="f2"></div>
+        </div>
+
+        <div class="ex">
+            <label>3. 10 + 2 = ? (Write word)</label>
+            <div class="ex-row">
+                <input type="text" id="e3" placeholder="Type here…">
+                <button class="btn btn-sm" onclick="check('e3','kaksitoista')">Check</button>
+            </div>
+            <div class="feedback" id="f3"></div>
+        </div>
+
+        <div class="ex">
+            <label>4. Translate: "I am 20 years old."</label>
+            <div class="ex-row">
+                <input type="text" id="e4" placeholder="Type here…">
+                <button class="btn btn-sm" onclick="check('e4','olen 20 vuotta vanha')">Check</button>
+            </div>
+            <div class="feedback" id="f4"></div>
+        </div>
+
+        <div class="ex">
+            <label>5. How do you say "How old are you?"</label>
+            <div class="ex-row">
+                <input type="text" id="e5" placeholder="Type here…">
+                <button class="btn btn-sm" onclick="check('e5','kuinka vanha sinä olet')">Check</button>
+            </div>
+            <div class="feedback" id="f5"></div>
+        </div>
+    </div>
+
+    <!-- ===== WRITING ===== -->
+    <div class="card">
+        <h2>✍️ Write in Finnish</h2>
+        <p style="margin-bottom:12px;">Write your profile: Name, Country, and Age.<br>Example: "Moi! Olen Matti. Olen Suomesta. Olen 25."</p>
+        <textarea id="writing" placeholder="Moi! Olen..."></textarea>
+        <div style="margin-top:10px;display:flex;gap:8px">
+            <button class="btn btn-sm" onclick="saveWriting()">💾 Save</button>
+            <span id="save-msg" style="color:#2e7d32;font-size:.85rem;display:none;">✓ Saved!</span>
+        </div>
+    </div>
+
+    <!-- ===== PROGRESS ===== -->
+    <div class="card" style="text-align:center;">
+        <h2 style="justify-content:center;">📊 Your Progress</h2>
+        <div class="progress">
+            <span>A1</span>
+            <div class="bar"><div class="bar-fill"></div></div>
+            <span>B2</span>
+        </div>
+        <p style="color:#888;font-size:.85rem;margin-top:10px;">Lesson 3 / 300</p>
+    </div>
+
+    <div class="nav-links">
+        <a href="lesson_02.html">← Lesson 2</a>
+        <a href="#" style="opacity:0.5;cursor:default;">Lesson 4 (Coming tomorrow) →</a>
+    </div>
+</div>
+
+<footer>
+    <p>Learn Finnish — Lesson 3 · Next lesson tomorrow at 20:00</p>
+    <button onclick="window.print()" style="margin-top:8px;background:none;border:1px solid #ccc;padding:6px 14px;border-radius:6px;cursor:pointer;color:#888;font-size:.8rem;">🖨️ Print</button>
+</footer>
+
+<script>
+function check(id, answer) {
+    const input = document.getElementById(id);
+    const fb = document.getElementById('f' + id.charAt(1));
+    const val = input.value.trim().toLowerCase().replace(/[?.]/g, '').trim(); 
+    // basic cleanup for punctuation
+    if (!val) { fb.className='feedback wrong'; fb.textContent='Type something first!'; return; }
+    
+    // Check answer (allow simple variations)
+    // For older tasks, we used strict check. Here user might type "minä olen 20..." instead of just "olen 20"
+    if (val === answer || val.includes(answer)) {
+        fb.className='feedback correct';
+        fb.textContent='✅ Oikein!';
+        input.style.borderColor='#2e7d32';
+    } else {
+        fb.className='feedback wrong';
+        fb.textContent='❌ Try again. Answer: ' + answer;
+        input.style.borderColor='#c62828';
+    }
+}
+
+const wa = document.getElementById('writing');
+const saved = localStorage.getItem('fi_L3');
+if (saved) wa.value = saved;
+wa.addEventListener('input', () => localStorage.setItem('fi_L3', wa.value));
+
+function saveWriting() {
+    localStorage.setItem('fi_L3', wa.value);
+    const msg = document.getElementById('save-msg');
+    msg.style.display='inline';
+    setTimeout(() => msg.style.display='none', 2000);
+}
+
+document.querySelectorAll('.ex input').forEach(input => {
+    input.addEventListener('keydown', e => {
+        if (e.key === 'Enter') input.parentElement.querySelector('.btn').click();
+    });
+});
+</script>
+
+</body>
+</html>
