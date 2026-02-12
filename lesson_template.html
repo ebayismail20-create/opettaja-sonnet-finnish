@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finnish Lesson #1 - Suomen ääntäminen & tervehdykset</title>
+    <title>Finnish Lesson #{{LESSON_NUMBER}} - {{TOPIC}}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -235,10 +235,6 @@
             color: #555;
         }
 
-        .rule-explanation strong {
-            color: var(--fi-blue);
-        }
-
         /* Interactive Toggle */
         .toggle-btn {
             background: none;
@@ -361,11 +357,6 @@
             color: #555;
         }
 
-        .accordion-content.correct {
-            color: var(--accent-success);
-            font-weight: bold;
-        }
-
         /* Progress Footer */
         .progress-container {
             margin-top: 50px;
@@ -383,7 +374,14 @@
         .progress-fill {
             height: 100%;
             background: linear-gradient(90deg, var(--fi-blue), #42a5f5);
-            width: 0.33%;
+
+            width: {
+                    {
+                    PROGRESS_PERCENT
+                }
+            }
+
+            %;
         }
 
         .footer {
@@ -413,18 +411,18 @@
 <body>
 
     <div class="header">
-        <div class="date-display">2026-02-12</div>
-        <div class="level-badge">A1</div>
-        <h1>Lesson #1</h1>
-        <h2>Suomen ääntäminen & tervehdykset (Pronunciation & Greetings)</h2>
-        <div style="margin-top:20px;font-size:1.1rem;opacity:0.9;">Master the alphabet (Ä, Ö, Y) & say hello</div>
+        <div class="date-display">{{DATE}}</div>
+        <div class="level-badge">{{LEVEL}}</div>
+        <h1>Lesson #{{LESSON_NUMBER}}</h1>
+        <h2>{{TOPIC}}</h2>
+        <div style="margin-top:20px;font-size:1.1rem;opacity:0.9;">{{SUBTOPIC}}</div>
     </div>
 
     <!-- Today's Mission -->
     <div class="card mission-box">
         <div class="card-title">🚀 Tänään (Today's Mission)</div>
         <div class="mission-text">
-            Goal: Learn the unique Finnish sounds (Ä, Ö, Y), understand word stress, and master 10 survival phrases.
+            {{MISSION_TEXT}}
         </div>
     </div>
 
@@ -432,58 +430,15 @@
     <div class="card">
         <div class="card-title">🧠 Sanasto (Vocabulary)</div>
         <div class="vocab-grid">
+            {{VOCAB_ITEMS}}
+            <!-- Example Item Structure:
             <div class="vocab-item">
-                <span class="trick-icon" title="Trick: Sounds like 'Boy' -> You say hi to a boy.">💡</span>
-                <div class="fi-word">Moi / Hei</div>
-                <div class="pronunciation">[moy] / [hay]</div>
-                <div class="en-meaning">Hi / Hello</div>
+                <span class="trick-icon" title="Trick: ...">💡</span>
+                <div class="fi-word">Sana</div>
+                <div class="pronunciation">[sa-na]</div>
+                <div class="en-meaning">Word</div>
             </div>
-            <div class="vocab-item">
-                <span class="trick-icon" title="Trick: Sounds like 'Key-toss' -> Toss me the keys!">💡</span>
-                <div class="fi-word">Kiitos</div>
-                <div class="pronunciation">[KII-tos]</div>
-                <div class="en-meaning">Thank you</div>
-            </div>
-            <div class="vocab-item">
-                <div class="fi-word">Anteeksi</div>
-                <div class="pronunciation">[AN-teek-si]</div>
-                <div class="en-meaning">Sorry / Excuse me</div>
-            </div>
-            <div class="vocab-item">
-                <div class="fi-word">Mitä kuuluu?</div>
-                <div class="pronunciation">[MI-tä KUU-luu]</div>
-                <div class="en-meaning">How are you?</div>
-            </div>
-            <div class="vocab-item">
-                <div class="fi-word">Hyvää</div>
-                <div class="pronunciation">[HY-vää]</div>
-                <div class="en-meaning">Good</div>
-            </div>
-            <div class="vocab-item">
-                <div class="fi-word">Minä</div>
-                <div class="pronunciation">[MI-nä]</div>
-                <div class="en-meaning">I / Me</div>
-            </div>
-            <div class="vocab-item">
-                <div class="fi-word">Sinä</div>
-                <div class="pronunciation">[SI-nä]</div>
-                <div class="en-meaning">You</div>
-            </div>
-            <div class="vocab-item">
-                <div class="fi-word">Kyllä / Joo</div>
-                <div class="pronunciation">[KYL-lä] / [yoo]</div>
-                <div class="en-meaning">Yes</div>
-            </div>
-            <div class="vocab-item">
-                <div class="fi-word">Ei</div>
-                <div class="pronunciation">[ei]</div>
-                <div class="en-meaning">No</div>
-            </div>
-            <div class="vocab-item">
-                <div class="fi-word">Nähdään</div>
-                <div class="pronunciation">[NÄH-dään]</div>
-                <div class="en-meaning">See you</div>
-            </div>
+            -->
         </div>
     </div>
 
@@ -491,151 +446,86 @@
     <div class="card">
         <div class="card-title">🎭 Kielioppiteatteri (Grammar Theater)</div>
         <div class="grammar-theater">
-            <div style="margin-bottom:15px;">
-                <span style="font-size:0.9rem;text-transform:uppercase;color:#888;">Rule 1: Stress</span><br>
-                <strong><span class="g-stem"
-                        style="font-size:1.5rem;border-bottom:3px solid var(--fi-blue);">SUO</span></strong>mi
-                &nbsp;&nbsp;
-                <strong><span class="g-stem"
-                        style="font-size:1.5rem;border-bottom:3px solid var(--fi-blue);">KII</span></strong>tos
-                &nbsp;&nbsp;
-                <strong><span class="g-stem"
-                        style="font-size:1.5rem;border-bottom:3px solid var(--fi-blue);">AN</span></strong>teeksi
-            </div>
-            <div>
-                <span style="font-size:0.9rem;text-transform:uppercase;color:#888;">Rule 2: Vowel Harmony</span><br>
-                <span style="color:#d32f2f;">A, O, U</span> (Back) vs. <span style="color:#1976d2;">Ä, Ö, Y</span>
-                (Front)
-            </div>
+            {{GRAMMAR_VISUALIZATION}}
+            <!-- Example: <span class="g-stem">Auto</span><span class="g-ending">ssa</span> -->
         </div>
         <div class="rule-explanation">
-            <p><strong>1. First Syllable Stress:</strong> In Finnish, the emphasis (= stress) is ALWAYS on the
-                <strong>first syllable</strong>. Always. No exceptions. Listen to the rhythm: <em>DA-da-da</em>.</p>
-            <p style="margin-top:10px;"><strong>2. The Dots Matter (Ä/Ö):</strong> 'A' and 'Ä' are totally different
-                letters. 'A' is like in "father". 'Ä' is like in "cat". Changing dots changes meaning!</p>
-            <p style="margin-top:10px;"><strong>3. Double Letters = Long Sound:</strong> If a letter is doubled (aa, oo,
-                tt, kk), you hold the sound 2x longer. <em>Tuli</em> (fire) vs. <em>Tuuli</em> (wind).</p>
+            {{GRAMMAR_EXPLANATION}}
         </div>
 
         <!-- Opettaja's Tricks -->
         <div class="tricks-box card" style="margin-top:25px;margin-bottom:0;border:none;">
             <div class="card-title" style="border:none;margin-bottom:10px;">Opettaja's Tricks</div>
-            <p>🏠 <strong>Mouth House Metaphor:</strong> Think of your mouth as a house.</p>
-            <ul style="margin-left:20px;margin-top:10px;">
-                <li><strong>Back Vowels (A, O, U)</strong> live in the back (throat).</li>
-                <li><strong>Front Vowels (Ä, Ö, Y)</strong> live in the front (teeth/lips).</li>
-                <li><strong>Neutral (E, I)</strong> can visit anyone.</li>
-            </ul>
-            <p style="margin-top:10px;"><em>You almost never mix Back and Front vowels in the same word (except compound
-                    words)!</em></p>
+            {{TRICKS_CONTENT}}
         </div>
     </div>
 
     <!-- Audio Section -->
     <div class="card">
         <div class="card-title">🎧 Kuuntele (Listen)</div>
-        <div class="audio-player" onclick="alert('Playing: Matti and Liisa meet on the street.')">
-            ▶️ Play Audio Track #1
+        <div class="audio-player" onclick="alert('Audio playing simulation...')">
+            ▶️ Play Audio Track #{{LESSON_NUMBER}}
         </div>
         <div style="margin-top:20px;">
             <h3>Script:</h3>
             <div style="background:#f9f9f9;padding:15px;border-radius:8px;margin-top:10px;font-style:italic;">
-                <strong>Matti:</strong> Moi, Liisa!<br>
-                <strong>Liisa:</strong> Hei Matti! Mitä kuuluu?<br>
-                <strong>Matti:</strong> Kiitos, hyvää. Entä sinulle? (And to you?)<br>
-                <strong>Liisa:</strong> Ihan hyvää. Nähdään!<br>
-                <strong>Matti:</strong> Moi moi!
+                {{AUDIO_SCRIPT}}
             </div>
-            <p style="margin-top:15px;font-weight:600;">Key phrases to catch: "Mitä kuuluu", "Hyvää", "Moi moi"</p>
         </div>
     </div>
 
     <!-- Exercise Zone -->
     <div class="card">
         <div class="card-title">💪 Harjoitukset (Exercises)</div>
+        {{EXERCISES}}
+        <!-- 
         <div class="exercise-row">
-            <label class="ex-label">1. Translate: "Hello" (Casual)</label>
-            <input type="text" class="ex-input" placeholder="Type answer...">
+            <label class="ex-label">1. Translate: Hello</label>
+            <input type="text" class="ex-input" placeholder="Type here...">
             <button class="check-btn" onclick="checkEx(this, 'Moi')">Check</button>
         </div>
-        <div class="exercise-row">
-            <label class="ex-label">2. Translate: "Thank you"</label>
-            <input type="text" class="ex-input" placeholder="Type answer...">
-            <button class="check-btn" onclick="checkEx(this, 'Kiitos')">Check</button>
-        </div>
-        <div class="exercise-row">
-            <label class="ex-label">3. Fill in: "Mitä _______?" (How are you?)</label>
-            <input type="text" class="ex-input" placeholder="Type answer...">
-            <button class="check-btn" onclick="checkEx(this, 'kuuluu')">Check</button>
-        </div>
-        <div class="exercise-row">
-            <label class="ex-label">4. Which syllable is stressed in "RA-vin-to-la"?</label>
-            <input type="text" class="ex-input" placeholder="Type 1st, 2nd, 3rd...">
-            <button class="check-btn" onclick="checkEx(this, '1st')">Check</button>
-        </div>
+        -->
     </div>
 
     <!-- Writing Lab -->
     <div class="card">
         <div class="card-title">✍️ Kirjoituslaboratorio (Writing Lab)</div>
-        <p style="margin-bottom:15px;"><strong>Task:</strong> Introduce yourself simply. Use "Moi", "Minä olen..." (I
-            am...), and "Mitä kuuluu?". Write 3-5 sentences.</p>
-        <textarea class="writing-area" placeholder="Moi! Minä olen..."></textarea>
-        <button class="check-btn" style="margin-top:10px;background:#2e7d32;"
-            onclick="alert('Writing saved locally!')">Save Entry</button>
+        <p style="margin-bottom:15px;"><strong>Task:</strong> {{WRITING_TASK}}</p>
+        <textarea class="writing-area" placeholder="Kirjoita tähän (Write here)..."></textarea>
+        <button class="check-btn" style="margin-top:10px;background:#2e7d32;">Save Entry</button>
     </div>
 
     <!-- Daily Test -->
     <div class="card">
         <div class="card-title">🧪 Päivän Testi (Daily Test)</div>
         <div id="quiz-container">
+            {{QUIZ_CONTENT}}
+            <!--
             <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAcc(this, 'Answer: Kiitos')">1. How do you say 'Thank you'?
-                    <span>+</span></div>
-                <div class="accordion-content correct"></div>
+                <div class="accordion-header" onclick="toggleAcc(this)">1. Question? <span>+</span></div>
+                <div class="accordion-content">Answer</div>
             </div>
-            <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAcc(this, 'Answer: 1st Syllable (BA)')">2. Where is the
-                    stress in 'Banaani'? <span>+</span></div>
-                <div class="accordion-content correct"></div>
-            </div>
-            <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAcc(this, 'Answer: Like A in Cat')">3. How is 'Ä'
-                    pronounced? <span>+</span></div>
-                <div class="accordion-content correct"></div>
-            </div>
-            <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAcc(this, 'Answer: Excuse me / Sorry')">4. Translate
-                    'Anteeksi' <span>+</span></div>
-                <div class="accordion-content correct"></div>
-            </div>
-            <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAcc(this, 'Answer: False (Moi is casual/informal)')">5.
-                    True or False: 'Moi' is formal data. <span>+</span></div>
-                <div class="accordion-content correct"></div>
-            </div>
+            -->
         </div>
     </div>
 
     <!-- YKI Corner -->
     <div class="card" style="border:2px solid var(--fi-blue);">
         <div class="card-title">🎓 YKI-nurkka (YKI Corner)</div>
-        <p><strong>Skill Focus:</strong> Speaking (Pronunciation)</p>
-        <p style="margin-top:10px;"><strong>YKI Tip:</strong> Clear pronunciation is more important than perfect grammar
-            in the oral test. If you mumble, you lose points. Practice saying vowels clearly!</p>
+        <p>{{YKI_CONTENT}}</p>
     </div>
 
     <!-- Footer & Progress -->
     <div class="progress-container">
         <div style="display:flex;justify-content:space-between;font-weight:700;color:var(--fi-blue);">
             <span>A1 (Start)</span>
-            <span>Current: A1</span>
+            <span>Current: {{LEVEL}}</span>
             <span>B2 (Goal)</span>
         </div>
         <div class="progress-track">
             <div class="progress-fill"></div>
         </div>
-        <p>Lesson 1 of 300 completed</p>
+        <p>{{PROGRESS_MESSAGE}}</p>
     </div>
 
     <div class="footer">
@@ -650,8 +540,7 @@
         function checkEx(btn, answer) {
             const input = btn.previousElementSibling;
             const userVal = input.value.trim().toLowerCase();
-            // Allow for simple variations or exact match
-            if (userVal.includes(answer.toLowerCase())) {
+            if (userVal === answer.toLowerCase()) {
                 input.style.borderColor = 'var(--accent-success)';
                 btn.textContent = 'Oikein! (Correct)';
                 btn.style.background = 'var(--accent-success)';
@@ -665,7 +554,7 @@
         function toggleAcc(header, answer) {
             const content = header.nextElementSibling;
 
-            if (answer && !content.innerHTML) {
+            if (!content.innerHTML && answer) {
                 content.innerHTML = answer;
             }
 
@@ -677,10 +566,10 @@
         // Auto-save writing
         const writingArea = document.querySelector('.writing-area');
         if (writingArea) {
-            const saved = localStorage.getItem('finnish_lesson_1_writing');
+            const saved = localStorage.getItem('finnish_lesson_{{LESSON_NUMBER}}_writing');
             if (saved) writingArea.value = saved;
             writingArea.addEventListener('input', (e) => {
-                localStorage.setItem('finnish_lesson_1_writing', e.target.value);
+                localStorage.setItem('finnish_lesson_{{LESSON_NUMBER}}_writing', e.target.value);
             });
         }
     </script>
