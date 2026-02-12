@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Finnish — Lesson 1</title>
+    <title>Learn Finnish — Lesson 2</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -26,7 +26,6 @@
             padding: 16px
         }
 
-        /* Header */
         header {
             background: #003580;
             color: #fff;
@@ -58,7 +57,6 @@
             margin-bottom: 12px
         }
 
-        /* Cards */
         .card {
             background: #fff;
             border-radius: 14px;
@@ -77,7 +75,6 @@
             gap: 8px
         }
 
-        /* Word Table */
         table {
             width: 100%;
             border-collapse: collapse
@@ -115,7 +112,6 @@
             font-size: .85rem
         }
 
-        /* Dialogue */
         .dialogue {
             background: #f0f7ff;
             border-radius: 10px;
@@ -132,7 +128,6 @@
             color: #003580
         }
 
-        /* Exercises */
         .ex {
             margin-bottom: 16px
         }
@@ -211,7 +206,6 @@
             color: #c62828
         }
 
-        /* Writing */
         textarea {
             width: 100%;
             min-height: 120px;
@@ -229,7 +223,6 @@
             border-color: #003580
         }
 
-        /* Quiz */
         .quiz-q {
             margin-bottom: 14px;
             padding: 14px;
@@ -257,7 +250,6 @@
             font-weight: 600
         }
 
-        /* Progress */
         .progress {
             display: flex;
             align-items: center;
@@ -275,7 +267,7 @@
 
         .bar-fill {
             height: 100%;
-            width: 0.33%;
+            width: 0.66%;
             background: #003580;
             border-radius: 3px
         }
@@ -285,7 +277,6 @@
             color: #888
         }
 
-        /* Tip */
         .tip {
             background: #fffde7;
             border-left: 4px solid #ffd600;
@@ -295,7 +286,43 @@
             font-size: .95rem
         }
 
-        /* Footer */
+        .lego {
+            background: #f0f7ff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            margin: 16px 0
+        }
+
+        .lego .stem {
+            color: #1b5e20;
+            font-weight: 800
+        }
+
+        .lego .end {
+            color: #003580;
+            font-weight: 800
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px
+        }
+
+        .nav-links a {
+            color: #003580;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: .9rem
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline
+        }
+
         footer {
             text-align: center;
             padding: 30px 0;
@@ -322,67 +349,19 @@
 <body>
 
     <header>
-        <div class="badge">Level A1 · Lesson 1 of 300</div>
+        <div class="badge">Level A1 · Lesson 2 of 300</div>
         <h1>🇫🇮 Learn Finnish</h1>
-        <p>Alphabet, Pronunciation & First Words</p>
+        <p>"To Be" (Olla) & Where Are You From?</p>
     </header>
 
     <div class="wrap">
 
-        <!-- ===== KEY SOUNDS ===== -->
+        <!-- ===== KEY VERB: OLLA ===== -->
         <div class="card">
-            <h2>🔤 Finnish Sounds You Need to Know</h2>
+            <h2>🔑 The Most Important Verb: Olla (To Be)</h2>
             <div class="tip">
-                ☝️ In Finnish, every letter has <strong>one sound only</strong>. And stress is <strong>always</strong>
-                on the first syllable. Simple!
+                ☝️ "Hän" means both "he" AND "she" — Finnish has no gender!
             </div>
-            <table>
-                <tr>
-                    <th>Letter</th>
-                    <th>Sounds Like</th>
-                    <th>Example</th>
-                </tr>
-                <tr>
-                    <td class="fi">A</td>
-                    <td class="pron">"a" in father</td>
-                    <td>auto (car)</td>
-                </tr>
-                <tr>
-                    <td class="fi">Ä</td>
-                    <td class="pron">"a" in cat</td>
-                    <td>äiti (mother)</td>
-                </tr>
-                <tr>
-                    <td class="fi">O</td>
-                    <td class="pron">"o" in hot</td>
-                    <td>omena (apple)</td>
-                </tr>
-                <tr>
-                    <td class="fi">Ö</td>
-                    <td class="pron">"u" in burn</td>
-                    <td>öljy (oil)</td>
-                </tr>
-                <tr>
-                    <td class="fi">Y</td>
-                    <td class="pron">say "ee" with round lips</td>
-                    <td>yö (night)</td>
-                </tr>
-                <tr>
-                    <td class="fi">R</td>
-                    <td class="pron">rolled / trilled</td>
-                    <td>ravintola (restaurant)</td>
-                </tr>
-                <tr>
-                    <td class="fi">aa, oo, ii…</td>
-                    <td class="pron">hold the sound 2× longer</td>
-                    <td>tuuli (wind) vs. tuli (fire)</td>
-                </tr>
-            </table>
-        </div>
-
-        <!-- ===== FIRST WORDS ===== -->
-        <div class="card">
-            <h2>💬 Your First 12 Words</h2>
             <table>
                 <tr>
                     <th>Finnish</th>
@@ -390,78 +369,125 @@
                     <th>English</th>
                 </tr>
                 <tr>
-                    <td class="fi">Moi</td>
-                    <td class="pron">moy</td>
-                    <td>Hi</td>
-                </tr>
-                <tr>
-                    <td class="fi">Hei</td>
-                    <td class="pron">hay</td>
-                    <td>Hello</td>
-                </tr>
-                <tr>
-                    <td class="fi">Kiitos</td>
-                    <td class="pron">KEE-tos</td>
-                    <td>Thank you</td>
-                </tr>
-                <tr>
-                    <td class="fi">Anteeksi</td>
-                    <td class="pron">AN-teek-si</td>
-                    <td>Sorry / Excuse me</td>
-                </tr>
-                <tr>
-                    <td class="fi">Kyllä</td>
-                    <td class="pron">KÜL-lä</td>
-                    <td>Yes</td>
-                </tr>
-                <tr>
-                    <td class="fi">Ei</td>
-                    <td class="pron">ay</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                    <td class="fi">Ole hyvä</td>
-                    <td class="pron">O-le HÜ-vä</td>
-                    <td>You're welcome</td>
-                </tr>
-                <tr>
-                    <td class="fi">Mitä kuuluu?</td>
-                    <td class="pron">MI-tä KUU-luu</td>
-                    <td>How are you?</td>
-                </tr>
-                <tr>
-                    <td class="fi">Hyvää, kiitos</td>
-                    <td class="pron">HÜ-vää KEE-tos</td>
-                    <td>Good, thanks</td>
-                </tr>
-                <tr>
-                    <td class="fi">Minä olen…</td>
+                    <td class="fi">Minä olen</td>
                     <td class="pron">MI-nä O-len</td>
-                    <td>I am…</td>
+                    <td>I am</td>
                 </tr>
                 <tr>
-                    <td class="fi">Nähdään</td>
-                    <td class="pron">NÄH-dään</td>
-                    <td>See you</td>
+                    <td class="fi">Sinä olet</td>
+                    <td class="pron">SI-nä O-let</td>
+                    <td>You are</td>
                 </tr>
                 <tr>
-                    <td class="fi">Moi moi</td>
-                    <td class="pron">moy moy</td>
-                    <td>Bye bye</td>
+                    <td class="fi">Hän on</td>
+                    <td class="pron">hän on</td>
+                    <td>He / She is</td>
+                </tr>
+                <tr>
+                    <td class="fi">Me olemme</td>
+                    <td class="pron">me O-lem-me</td>
+                    <td>We are</td>
+                </tr>
+                <tr>
+                    <td class="fi">Te olette</td>
+                    <td class="pron">te O-let-te</td>
+                    <td>You (plural) are</td>
+                </tr>
+                <tr>
+                    <td class="fi">He ovat</td>
+                    <td class="pron">he O-vat</td>
+                    <td>They are</td>
                 </tr>
             </table>
+            <div class="lego">
+                <span class="stem">ol</span><span class="end">en</span> ·
+                <span class="stem">ol</span><span class="end">et</span> ·
+                <span class="stem">on</span> ·
+                <span class="stem">ol</span><span class="end">emme</span> ·
+                <span class="stem">ol</span><span class="end">ette</span> ·
+                <span class="stem">o</span><span class="end">vat</span>
+                <div style="font-size:.8rem;color:#888;margin-top:8px;">🟢 green = stem · 🔵 blue = ending</div>
+            </div>
+        </div>
+
+        <!-- ===== NEW WORDS ===== -->
+        <div class="card">
+            <h2>💬 New Words</h2>
+            <table>
+                <tr>
+                    <th>Finnish</th>
+                    <th>Say it</th>
+                    <th>English</th>
+                </tr>
+                <tr>
+                    <td class="fi">Opiskelija</td>
+                    <td class="pron">O-pis-ke-li-ja</td>
+                    <td>Student</td>
+                </tr>
+                <tr>
+                    <td class="fi">Opettaja</td>
+                    <td class="pron">O-pet-ta-ja</td>
+                    <td>Teacher</td>
+                </tr>
+                <tr>
+                    <td class="fi">Suomalainen</td>
+                    <td class="pron">SUO-ma-lai-nen</td>
+                    <td>Finnish (person)</td>
+                </tr>
+                <tr>
+                    <td class="fi">Mistä?</td>
+                    <td class="pron">MIS-tä</td>
+                    <td>From where?</td>
+                </tr>
+                <tr>
+                    <td class="fi">Kotoisin</td>
+                    <td class="pron">KO-toi-sin</td>
+                    <td>Originally from</td>
+                </tr>
+                <tr>
+                    <td class="fi">Suomesta</td>
+                    <td class="pron">SUO-mes-ta</td>
+                    <td>From Finland</td>
+                </tr>
+                <tr>
+                    <td class="fi">Irakista</td>
+                    <td class="pron">I-ra-kis-ta</td>
+                    <td>From Iraq</td>
+                </tr>
+                <tr>
+                    <td class="fi">Marokosta</td>
+                    <td class="pron">MA-ro-kos-ta</td>
+                    <td>From Morocco</td>
+                </tr>
+                <tr>
+                    <td class="fi">Tervetuloa</td>
+                    <td class="pron">TER-ve-tu-lo-a</td>
+                    <td>Welcome</td>
+                </tr>
+                <tr>
+                    <td class="fi">Suomeen</td>
+                    <td class="pron">SUO-meen</td>
+                    <td>To Finland</td>
+                </tr>
+            </table>
+            <div class="tip" style="margin-top:16px;">
+                ☝️ To say "from [country]" add <strong>-sta</strong> or <strong>-stä</strong> to the country name.<br>
+                Suomi → Suome<strong>sta</strong> · Irak → Iraki<strong>sta</strong> · Marokko →
+                Maroko<strong>sta</strong>
+            </div>
         </div>
 
         <!-- ===== DIALOGUE ===== -->
         <div class="card">
             <h2>🎧 Listen & Read</h2>
-            <p style="color:#666;margin-bottom:12px;">Two friends meet on the street:</p>
+            <p style="color:#666;margin-bottom:12px;">First day at a Finnish language class:</p>
             <div class="dialogue">
-                <div class="line"><span class="speaker">Matti:</span> Moi, Liisa!</div>
-                <div class="line"><span class="speaker">Liisa:</span> Hei! Mitä kuuluu?</div>
-                <div class="line"><span class="speaker">Matti:</span> Hyvää, kiitos. Entä sinulle?</div>
-                <div class="line"><span class="speaker">Liisa:</span> Ihan hyvää! Nähdään!</div>
-                <div class="line"><span class="speaker">Matti:</span> Moi moi!</div>
+                <div class="line"><span class="speaker">Opettaja:</span> Hei kaikki! Minä olen Maija. Olen opettaja.
+                    Mistä te olette kotoisin?</div>
+                <div class="line"><span class="speaker">Ahmed:</span> Moi! Minä olen Ahmed. Olen Irakista kotoisin.
+                </div>
+                <div class="line"><span class="speaker">Sara:</span> Hei! Minä olen Sara. Olen Marokosta kotoisin.</div>
+                <div class="line"><span class="speaker">Opettaja:</span> Hienoa! Tervetuloa Suomeen!</div>
             </div>
         </div>
 
@@ -470,58 +496,66 @@
             <h2>💪 Practice</h2>
 
             <div class="ex">
-                <label>1. How do you say "Hi" in Finnish?</label>
+                <label>1. I am a student → Minä _______ opiskelija.</label>
                 <div class="ex-row">
                     <input type="text" id="e1" placeholder="Type here…">
-                    <button class="btn btn-sm" onclick="check('e1','moi')">Check</button>
+                    <button class="btn btn-sm" onclick="check('e1','olen')">Check</button>
                 </div>
                 <div class="feedback" id="f1"></div>
             </div>
 
             <div class="ex">
-                <label>2. How do you say "Thank you"?</label>
+                <label>2. You are a teacher → Sinä _______ opettaja.</label>
                 <div class="ex-row">
                     <input type="text" id="e2" placeholder="Type here…">
-                    <button class="btn btn-sm" onclick="check('e2','kiitos')">Check</button>
+                    <button class="btn btn-sm" onclick="check('e2','olet')">Check</button>
                 </div>
                 <div class="feedback" id="f2"></div>
             </div>
 
             <div class="ex">
-                <label>3. Fill in: "Mitä ________?" (How are you?)</label>
+                <label>3. She is Finnish → Hän _______ suomalainen.</label>
                 <div class="ex-row">
                     <input type="text" id="e3" placeholder="Type here…">
-                    <button class="btn btn-sm" onclick="check('e3','kuuluu')">Check</button>
+                    <button class="btn btn-sm" onclick="check('e3','on')">Check</button>
                 </div>
                 <div class="feedback" id="f3"></div>
             </div>
 
             <div class="ex">
-                <label>4. How do you say "No"?</label>
+                <label>4. I am from Iraq → Olen _______ kotoisin.</label>
                 <div class="ex-row">
                     <input type="text" id="e4" placeholder="Type here…">
-                    <button class="btn btn-sm" onclick="check('e4','ei')">Check</button>
+                    <button class="btn btn-sm" onclick="check('e4','irakista')">Check</button>
                 </div>
                 <div class="feedback" id="f4"></div>
             </div>
 
             <div class="ex">
-                <label>5. Complete: "Minä _______ Ahmed." (I am Ahmed.)</label>
+                <label>5. We are students → Me _______ opiskelijoita.</label>
                 <div class="ex-row">
                     <input type="text" id="e5" placeholder="Type here…">
-                    <button class="btn btn-sm" onclick="check('e5','olen')">Check</button>
+                    <button class="btn btn-sm" onclick="check('e5','olemme')">Check</button>
                 </div>
                 <div class="feedback" id="f5"></div>
+            </div>
+
+            <div class="ex">
+                <label>6. Welcome to Finland! → Tervetuloa _______!</label>
+                <div class="ex-row">
+                    <input type="text" id="e6" placeholder="Type here…">
+                    <button class="btn btn-sm" onclick="check('e6','suomeen')">Check</button>
+                </div>
+                <div class="feedback" id="f6"></div>
             </div>
         </div>
 
         <!-- ===== WRITING ===== -->
         <div class="card">
             <h2>✍️ Write in Finnish</h2>
-            <p style="margin-bottom:12px;">Introduce yourself. Use: <strong>Moi</strong>, <strong>Minä olen…</strong>,
-                <strong>Mitä kuuluu?</strong>
-            </p>
-            <textarea id="writing" placeholder="Moi! Minä olen..."></textarea>
+            <p style="margin-bottom:12px;">Introduce yourself like you're in a Finnish class. Say your name, where
+                you're from, and what you do. Use <strong>olen</strong> at least 3 times.</p>
+            <textarea id="writing" placeholder="Hei! Minä olen... Olen... kotoisin."></textarea>
             <div style="margin-top:10px;display:flex;gap:8px">
                 <button class="btn btn-sm" onclick="saveWriting()">💾 Save</button>
                 <span id="save-msg" style="color:#2e7d32;font-size:.85rem;display:none;">✓ Saved!</span>
@@ -531,28 +565,47 @@
         <!-- ===== QUICK QUIZ ===== -->
         <div class="card">
             <h2>🧪 Test Yourself</h2>
-            <p style="color:#666;margin-bottom:14px;">Click each question to reveal the answer.</p>
+            <p style="color:#666;margin-bottom:14px;">Click to reveal answers.</p>
 
             <div class="quiz-q" onclick="this.querySelector('.a').style.display='block'">
-                <div class="q">1. What does "Kiitos" mean?</div>
-                <div class="a">→ Thank you</div>
+                <div class="q">1. "Minä _____ opiskelija" — what goes in the blank?</div>
+                <div class="a">→ olen</div>
             </div>
             <div class="quiz-q" onclick="this.querySelector('.a').style.display='block'">
-                <div class="q">2. Where is the stress in Finnish words?</div>
-                <div class="a">→ Always on the first syllable</div>
+                <div class="q">2. How do you say "She is a teacher"?</div>
+                <div class="a">→ Hän on opettaja</div>
             </div>
             <div class="quiz-q" onclick="this.querySelector('.a').style.display='block'">
-                <div class="q">3. What's the difference between A and Ä?</div>
-                <div class="a">→ A = "father" · Ä = "cat" — different sounds!</div>
+                <div class="q">3. What does "hän" mean?</div>
+                <div class="a">→ He OR She (no gender in Finnish!)</div>
             </div>
             <div class="quiz-q" onclick="this.querySelector('.a').style.display='block'">
-                <div class="q">4. Translate: "Nähdään!"</div>
-                <div class="a">→ See you!</div>
+                <div class="q">4. Translate: "Olen Marokosta kotoisin"</div>
+                <div class="a">→ I am originally from Morocco</div>
             </div>
             <div class="quiz-q" onclick="this.querySelector('.a').style.display='block'">
-                <div class="q">5. "Tuli" = fire. What does "Tuuli" (double u) mean?</div>
-                <div class="a">→ Wind — double letter = longer sound = different meaning</div>
+                <div class="q">5. How do you say "from Finland"?</div>
+                <div class="a">→ Suomesta (Suomi + sta)</div>
             </div>
+        </div>
+
+        <!-- ===== REVIEW ===== -->
+        <div class="card">
+            <h2>🔄 Quick Review from Lesson 1</h2>
+            <table>
+                <tr>
+                    <td class="fi">Moi</td>
+                    <td>Hi</td>
+                    <td class="fi">Kiitos</td>
+                    <td>Thank you</td>
+                </tr>
+                <tr>
+                    <td class="fi">Mitä kuuluu?</td>
+                    <td>How are you?</td>
+                    <td class="fi">Nähdään</td>
+                    <td>See you</td>
+                </tr>
+            </table>
         </div>
 
         <!-- ===== PROGRESS ===== -->
@@ -565,18 +618,17 @@
                 </div>
                 <span>B2</span>
             </div>
-            <p style="color:#888;font-size:.85rem;margin-top:10px;">Lesson 1 / 300</p>
+            <p style="color:#888;font-size:.85rem;margin-top:10px;">Lesson 2 / 300</p>
         </div>
 
-        <div style="text-align:right;margin-top:20px;">
-            <a href="lesson_02.html" style="color:#003580;text-decoration:none;font-weight:600;font-size:.9rem;">Lesson
-                2 →</a>
+        <div class="nav-links">
+            <a href="lesson_01.html">← Lesson 1</a>
+            <a href="lesson_03.html">Lesson 3 →</a>
         </div>
-
     </div>
 
     <footer>
-        <p>Learn Finnish — Lesson 1 · Next lesson tomorrow at 20:00</p>
+        <p>Learn Finnish — Lesson 2 · Next lesson tomorrow at 20:00</p>
         <button onclick="window.print()"
             style="margin-top:8px;background:none;border:1px solid #ccc;padding:6px 14px;border-radius:6px;cursor:pointer;color:#888;font-size:.8rem;">🖨️
             Print</button>
@@ -599,20 +651,18 @@
             }
         }
 
-        // Writing auto-save
         const wa = document.getElementById('writing');
-        const saved = localStorage.getItem('fi_L1');
+        const saved = localStorage.getItem('fi_L2');
         if (saved) wa.value = saved;
-        wa.addEventListener('input', () => localStorage.setItem('fi_L1', wa.value));
+        wa.addEventListener('input', () => localStorage.setItem('fi_L2', wa.value));
 
         function saveWriting() {
-            localStorage.setItem('fi_L1', wa.value);
+            localStorage.setItem('fi_L2', wa.value);
             const msg = document.getElementById('save-msg');
             msg.style.display = 'inline';
             setTimeout(() => msg.style.display = 'none', 2000);
         }
 
-        // Enter key to check
         document.querySelectorAll('.ex input').forEach(input => {
             input.addEventListener('keydown', e => {
                 if (e.key === 'Enter') input.parentElement.querySelector('.btn').click();
